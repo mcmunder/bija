@@ -1,5 +1,0 @@
-import {Mongo} from 'meteor/mongo';
-
-const <%= collectionName %> = new Mongo.Collection('<%= collectionFileName %>');
-
-export default <%= collectionName %>;
