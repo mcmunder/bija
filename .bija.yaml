@@ -10,7 +10,7 @@ templates:
       import React from 'react'
       import {storiesOf} from '@storybook'
       import {action} from '@storybook/addon-actions'
-      import <%= componentName %> from '../<%= componentFileName %>'
+      import <%= componentName %> from '../<%= componentName %>'
 
       storiesOf('<%= moduleName %>', module)
         .add('<%= componentName %>',
@@ -22,7 +22,7 @@ templates:
     text: |
       import {compose} from 'recompose'
       import {connect} from 'react-redux'
-      import <%= componentName %> from '../components/<%= componentFileName %>'
+      import <%= componentName %> from '../components/<%= componentName %>'
 
       const mapStateToProps = state => ({
 
