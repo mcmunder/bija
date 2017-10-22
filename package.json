@@ -1,12 +1,15 @@
 {
   "name": "bija",
   "version": "1.0.0",
-  "description": "A command line tool for auto-generation of react components, redux containers, storybooks and more.",
+  "description":
+    "A command line tool for auto-generation of react components, redux containers, storybooks and more.",
   "bin": {
     "bija": "./bin/bija"
   },
   "scripts": {
-    "test": "npm run build && NODE_ENV=test ./node_modules/.bin/_mocha test/**/**/*_test.js --require babel-register",
+    "bija": "npm run build && node dist/cli.js",
+    "test":
+      "npm run build && NODE_ENV=test ./node_modules/.bin/_mocha test/**/**/*_test.js --require babel-register",
     "lint": "./node_modules/.bin/eslint .",
     "build": "./node_modules/.bin/babel lib/ -d dist/"
   },
@@ -14,14 +17,7 @@
     "type": "git",
     "url": "git+https://github.com/mcmunder/bija.git"
   },
-  "keywords": [
-    "react",
-    "redux",
-    "storybook",
-    "generator",
-    "mantra",
-    "cli"
-  ],
+  "keywords": ["react", "redux", "storybook", "generator", "mantra", "cli"],
   "author": "mcmunder",
   "license": "MIT",
   "bugs": {
