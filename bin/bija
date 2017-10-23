@@ -1,4 +1,4 @@
 #!/usr/bin/env node
 
-require('../dist/cli');
-require('../dist/update_notifier');
+require('../dist/cli')
+require('../dist/update_notifier')
