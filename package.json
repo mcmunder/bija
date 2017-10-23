@@ -7,6 +7,7 @@
     "bija": "./bin/bija"
   },
   "scripts": {
+    "bija": "npm run build && node dist/cli.js",
     "test":
       "npm run build && NODE_ENV=test ./node_modules/.bin/_mocha test/**/**/*_test.js --require babel-register",
     "lint": "./node_modules/.bin/eslint .",
@@ -39,6 +40,7 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.0.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-register": "^6.26.0",
     "chai": "^4.1.2",

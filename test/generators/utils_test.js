@@ -159,7 +159,7 @@ describe('getOutputPath', function () {
   })
 })
 
-describe('getTemplateVaraibles', function () {
+describe('getTemplateVariables', function () {
   describe('for components', function () {
     let expected = {
       componentName: 'UserList',
@@ -167,19 +167,19 @@ describe('getTemplateVaraibles', function () {
     }
 
     it('gets template variables - variation 1', function () {
-      let result = utils.getTemplateVaraibles('component', 'core', 'userList')
+      let result = utils.getTemplateVariables('component', 'core', 'userList')
       let matched = _.isEqual(result, expected)
       expect(matched).to.equal(true)
     })
 
     it('gets template variables - variation 2', function () {
-      let result = utils.getTemplateVaraibles('component', 'core', 'user_list')
+      let result = utils.getTemplateVariables('component', 'core', 'user_list')
       let matched = _.isEqual(result, expected)
       expect(matched).to.equal(true)
     })
 
     it('gets template variables - variation 3', function () {
-      let result = utils.getTemplateVaraibles('component', 'core', 'UserList')
+      let result = utils.getTemplateVariables('component', 'core', 'UserList')
       let matched = _.isEqual(result, expected)
       expect(matched).to.equal(true)
     })
@@ -193,19 +193,19 @@ describe('getTemplateVaraibles', function () {
     }
 
     it('gets template variables - variation 1', function () {
-      let result = utils.getTemplateVaraibles('storybook', 'core', 'userList')
+      let result = utils.getTemplateVariables('storybook', 'core', 'userList')
       let matched = _.isEqual(result, expected)
       expect(matched).to.equal(true)
     })
 
     it('gets template variables - variation 2', function () {
-      let result = utils.getTemplateVaraibles('storybook', 'core', 'user_list')
+      let result = utils.getTemplateVariables('storybook', 'core', 'user_list')
       let matched = _.isEqual(result, expected)
       expect(matched).to.equal(true)
     })
 
     it('gets template variables - variation 3', function () {
-      let result = utils.getTemplateVaraibles('storybook', 'core', 'UserList')
+      let result = utils.getTemplateVariables('storybook', 'core', 'UserList')
       let matched = _.isEqual(result, expected)
       expect(matched).to.equal(true)
     })
@@ -219,19 +219,19 @@ describe('getTemplateVaraibles', function () {
     }
 
     it('gets template variables - variation 1', function () {
-      let result = utils.getTemplateVaraibles('container', 'core', 'userList')
+      let result = utils.getTemplateVariables('container', 'core', 'userList')
       let matched = _.isEqual(result, expected)
       expect(matched).to.equal(true)
     })
 
     it('gets template variables - variation 2', function () {
-      let result = utils.getTemplateVaraibles('container', 'core', 'user_list')
+      let result = utils.getTemplateVariables('container', 'core', 'user_list')
       let matched = _.isEqual(result, expected)
       expect(matched).to.equal(true)
     })
 
     it('gets template variables - variation 3', function () {
-      let result = utils.getTemplateVaraibles('container', 'core', 'UserList')
+      let result = utils.getTemplateVariables('container', 'core', 'UserList')
       let matched = _.isEqual(result, expected)
       expect(matched).to.equal(true)
     })
@@ -244,7 +244,7 @@ describe('getTemplateVaraibles', function () {
     }
 
     it('gets template variables - variation 1', function () {
-      let result = utils.getTemplateVaraibles(
+      let result = utils.getTemplateVariables(
         'collection',
         null,
         'pullRequests'
@@ -254,7 +254,7 @@ describe('getTemplateVaraibles', function () {
     })
 
     it('gets template variables - variation 2', function () {
-      let result = utils.getTemplateVaraibles(
+      let result = utils.getTemplateVariables(
         'collection',
         null,
         'pull_requests'
@@ -264,7 +264,7 @@ describe('getTemplateVaraibles', function () {
     })
 
     it('gets template variables - variation 3', function () {
-      let result = utils.getTemplateVaraibles(
+      let result = utils.getTemplateVariables(
         'collection',
         null,
         'PullRequests'
@@ -274,7 +274,7 @@ describe('getTemplateVaraibles', function () {
     })
 
     it('gets templates variables with collection2 option', function () {
-      let result = utils.getTemplateVaraibles(
+      let result = utils.getTemplateVariables(
         'collection',
         null,
         'PullRequests',
@@ -285,7 +285,7 @@ describe('getTemplateVaraibles', function () {
     })
 
     it('gets templates variables with astronomy option', function () {
-      let result = utils.getTemplateVaraibles(
+      let result = utils.getTemplateVariables(
         'collection',
         null,
         'PullRequests',
@@ -313,7 +313,7 @@ describe('checkForModuleName', function () {
   })
 })
 
-describe('getTestTemplateVaraibles', function () {
+describe('getTestTemplateVariables', function () {
   describe('for components', function () {
     let expected = {
       componentName: 'HeaderMenu',
@@ -322,7 +322,7 @@ describe('getTestTemplateVaraibles', function () {
     }
 
     it('getes templates varaibles - variation 1', function () {
-      let result = utils.getTestTemplateVaraibles(
+      let result = utils.getTestTemplateVariables(
         'component',
         'user_management',
         'headerMenu'
@@ -332,7 +332,7 @@ describe('getTestTemplateVaraibles', function () {
     })
 
     it('getes templates varaibles - variation 2', function () {
-      let result = utils.getTestTemplateVaraibles(
+      let result = utils.getTestTemplateVariables(
         'component',
         'userManagement',
         'headerMenu'
@@ -342,7 +342,7 @@ describe('getTestTemplateVaraibles', function () {
     })
 
     it('getes templates varaibles - variation 3', function () {
-      let result = utils.getTestTemplateVaraibles(
+      let result = utils.getTestTemplateVariables(
         'component',
         'UserManagement',
         'header_menu'
@@ -359,7 +359,7 @@ describe('getTestTemplateVaraibles', function () {
     }
 
     it('getes templates varaibles - variation 1', function () {
-      let result = utils.getTestTemplateVaraibles(
+      let result = utils.getTestTemplateVariables(
         'container',
         'core',
         'comment_lists'
@@ -369,7 +369,7 @@ describe('getTestTemplateVaraibles', function () {
     })
 
     it('getes templates varaibles - variation 2', function () {
-      let result = utils.getTestTemplateVaraibles(
+      let result = utils.getTestTemplateVariables(
         'container',
         'core',
         'comment_lists'
