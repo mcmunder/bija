@@ -33,11 +33,11 @@ To customise the output adjust the .bija.yaml config file in the root of the pro
 | :--------------------- | :-------------- | :--------------------|
 | generateComponentTests | boolean         | false                |
 | generateContainerTests | boolean         | false                |
-| generateIndexFile      | boolean         | false                |
 | modulesPath            | string          | 'src/modules'        |
 | snakeCaseFileNames     | boolean         | false                |
 | storybook              | boolean         | false                |
 | tabSize                | number          | 2                    |
+| useIndexFile           | boolean         | false                |
 
 ## Examples
 
