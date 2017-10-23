@@ -16,7 +16,7 @@ import {getConfig} from '../config_utils'
 
 export function generateComponent (name, options, customConfig) {
   const config = getConfig(customConfig)
-  const {generateIndexFile, modulesPath, snakeCaseFileNames} = config
+  const {useIndexFile, modulesPath, snakeCaseFileNames} = config
   let [moduleName, entityName] = name.split(':')
   const casedEntityName = snakeCaseFileNames
     ? _.snakeCase(entityName)
@@ -27,7 +27,7 @@ export function generateComponent (name, options, customConfig) {
 
   _generate('component', moduleName, casedEntityName, options, config)
 
-  if (generateIndexFile) {
+  if (useIndexFile) {
     updateIndexFile({
       indexFilePath: `./${modulesPath}/${moduleName}/index.js`,
       insertImport: `export {default as ${casedEntityName}} from './components/${casedEntityName}'`,
@@ -44,7 +44,7 @@ export function generateComponent (name, options, customConfig) {
 }
 
 export function destroyComponent (name, options, customConfig) {
-  const {generateIndexFile, modulesPath, snakeCaseFileNames} = getConfig(
+  const {useIndexFile, modulesPath, snakeCaseFileNames} = getConfig(
     customConfig
   )
   let [moduleName, entityName] = name.split(':')
@@ -59,7 +59,7 @@ export function destroyComponent (name, options, customConfig) {
   )
   removeFile(getTestOutputPath('component', casedEntityName, moduleName))
 
-  if (generateIndexFile) {
+  if (useIndexFile) {
     removeFromIndexFile(
       `./${modulesPath}/${moduleName}/index.js`,
       'component',

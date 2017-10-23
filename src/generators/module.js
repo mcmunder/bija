@@ -7,12 +7,9 @@ import {getConfig} from '../config_utils'
 import {removeFile} from './utils'
 
 export function generateModule (name, options, customConfig = {}) {
-  const {
-    generateIndexFile,
-    modulesPath,
-    storybook,
-    snakeCaseFileNames
-  } = getConfig(customConfig)
+  const {useIndexFile, modulesPath, storybook, snakeCaseFileNames} = getConfig(
+    customConfig
+  )
   let fileName = snakeCaseFileNames ? snakeCase(name) : camelCase(name)
   const modulePath = `./${modulesPath}/${fileName}`
 
@@ -20,7 +17,7 @@ export function generateModule (name, options, customConfig = {}) {
   createDir(`${modulePath}/components`)
   createDir(`${modulePath}/containers`)
 
-  if (generateIndexFile) {
+  if (useIndexFile) {
     outputFileSync(`${modulePath}/index.js`, '')
   }
 
