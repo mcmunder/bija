@@ -9,13 +9,12 @@ templates:
   - name: 'storybook'
     text: |
       import React from 'react'
-      import {storiesOf} from '@storybook'
+      import {storiesOf} from '@storybook/react'
       import {action} from '@storybook/addon-actions'
       import <%= componentName %> from '../<%= componentName %>'
 
       storiesOf('<%= moduleName %>', module)
-        .add('<%= componentName %>',
-        () => (
+        .add('<%= componentName %>', () => (
           <<%= componentName %> />
         )
       )
