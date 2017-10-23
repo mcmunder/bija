@@ -45,7 +45,7 @@ function generateModule(name, options) {
   }
 
   if (storybook) {
-    var moduleStoriesDir = modulePath + '/components/.stories';
+    var moduleStoriesDir = modulePath + '/components/stories';
     (0, _utils.createDir)(moduleStoriesDir);
   }
 }

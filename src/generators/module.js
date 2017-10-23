@@ -22,7 +22,7 @@ export function generateModule (name, options, customConfig = {}) {
   }
 
   if (storybook) {
-    const moduleStoriesDir = `${modulePath}/components/.stories`
+    const moduleStoriesDir = `${modulePath}/components/stories`
     createDir(moduleStoriesDir)
   }
 }

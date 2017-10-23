@@ -70,8 +70,8 @@ function getOutputPath(customConfig, type, entityName, moduleName) {
   var modulePath = './' + modulesPath + '/' + moduleName;
 
   if (type === 'storybook') {
-    outputFileName = entityName + '.stories.' + extension;
-    return modulePath + '/components/.stories/' + outputFileName;
+    outputFileName = entityName + 'stories.' + extension;
+    return modulePath + '/components/stories/' + outputFileName;
   } else if (type === 'container') {
     outputFileName = entityName + 'Container.' + extension;
   } else {
