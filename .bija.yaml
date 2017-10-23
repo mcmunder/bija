@@ -1,5 +1,6 @@
 tabSize: 2
 storybook: true
+generateIndexFile: false
 generateComponentTests: false
 generateContainerTests: false
 modulesPath: src/modules
