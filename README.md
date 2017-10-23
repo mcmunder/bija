@@ -14,25 +14,30 @@ A command line tool for auto-generation of react components, redux containers, s
 
 `bija` expects you to be in the project root directory.
 
+### API
+| command, alias | [type]    | [name]                      |
+| :------------- | :-------- | :-------------------------- |
+| generate, g    | component | `<moduleName>:<entityName>` |
+|                | container | `<moduleName>:<entityName>` |
+| destroy, d     | component | `<moduleName>:<entityName>` |
+|                | container | `<moduleName>:<entityName>` |
+
+
 ### Config / customize output
 
-To customise the output adjust the .bija.yml config file in the root of the project to your liking.
+To customise the output adjust the .bija.yaml config file in the root of the project to your liking. Some examples can be found in the examples dir.
 
+#### Customizable fields:
 
-### API
-| command, alias | [type] | [name] | option, alias |
-| :-- | :-- | :-- | :-- | :-- |
-| generate, g | component | `<moduleName>:<entityName>` | `--verbose, -v` `--storybook, -s` `--use-class, -c`|
-| | container |  `<moduleName>:<entityName>` | `--verbose, -v`<sup>*</sup> `--storybook, -s`<sup>**</sup> `--use-class, -c`<sup>***</sup> |
-| destroy, d | component | `<moduleName>:<entityName>` | - |
-| | container |  `<moduleName>:<entityName>` | - |
-
-  ** Log the output of the scripts in the console, rather than silencing them.*
-
-  *** Create storybook file*
-
-  **** By default, a stateless component is generated. By using the `--use-class` (`-c`) option, you can generate a ES6 class extending `React.Component`.*
-
+| field                  | type            | default              |
+| :--------------------- | :-------------- | :--------------------|
+| generateComponentTests | boolean         | false                |
+| generateContainerTests | boolean         | false                |
+| generateIndexFile      | boolean         | false                |
+| modulesPath            | string          | 'src/modules'        |
+| snakeCaseFileNames     | boolean         | false                |
+| storybook              | boolean         | false                |
+| tabSize                | number          | 2                    |
 
 ## Examples
 
