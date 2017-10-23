@@ -1,42 +1,35 @@
-import fse from 'fs-extra';
-import fs from 'fs';
-import path from 'path';
+import fse from 'fs-extra'
+import fs from 'fs'
+import path from 'path'
 
-import * as commands from '../dist/commands';
+const testDirPath = path.resolve(__dirname)
+const tmpDirPath = path.resolve(__dirname, 'tmp')
+const testAppPath = path.resolve(__dirname, tmpDirPath, 'blog')
 
-const testDirPath = path.resolve(__dirname);
-const tmpDirPath = path.resolve(__dirname, 'tmp');
-const testAppPath = path.resolve(__dirname, tmpDirPath, 'blog');
+export function setupTestApp () {
+  fse.mkdirsSync(tmpDirPath)
+  process.chdir(tmpDirPath)
 
-export function setupTestApp() {
-  // let consoleLog = console.log;
+  process.chdir(testAppPath)
 
-  // console.log = function() {}; // Suppress console.log
-  fse.mkdirsSync(tmpDirPath);
-  process.chdir(tmpDirPath);
-
-  commands.create(testAppPath);
-  process.chdir(testAppPath);
-
-  fse.outputFileSync('./.meteor/packages', 'test');
-  // console.log = consoleLog; // Resotre console.log
+  fse.outputFileSync('./.meteor/packages', 'test')
 }
 
-export function teardownTestApp() {
-  process.chdir(testDirPath);
-  fse.removeSync(testAppPath);
+export function teardownTestApp () {
+  process.chdir(testDirPath)
+  fse.removeSync(testAppPath)
 }
 
-export function checkFileOrDirExists(path) {
+export function checkFileOrDirExists (path) {
   try {
-    fs.lstatSync(path);
+    fs.lstatSync(path)
   } catch (e) {
     if (e.code === 'ENOENT') {
-      return false;
+      return false
     }
 
-    throw e;
+    throw e
   }
 
-  return true;
+  return true
 }

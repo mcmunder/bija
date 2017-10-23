@@ -1,0 +1,61 @@
+tabSize: 2
+storybook: true
+generateIndexFile: false
+generateComponentTests: false
+generateContainerTests: false
+modulesPath: src/modules
+snakeCaseFileNames: false
+templates:
+  - name: 'storybook'
+    text: |
+      import React from 'react'
+      import {storiesOf} from '@storybook'
+      import {action} from '@storybook/addon-actions'
+      import <%= componentName %> from '../<%= componentName %>'
+
+      storiesOf('<%= moduleName %>', module)
+        .add('<%= componentName %>',
+        () => (
+          <<%= componentName %> />
+        )
+      )
+  - name: 'container'
+    text: |
+      import {compose} from 'recompose'
+      import {connect} from 'react-redux'
+      import <%= componentName %> from '../components/<%= componentName %>'
+
+      const mapStateToProps = state => ({
+
+      })
+
+      const mapDispatchToProps = {
+
+      }
+
+      const <%= componentName %>Container = compose(
+        connect(
+          mapStateToProps,
+          mapDispatchToProps
+        )
+      )(<%= componentName %>)
+
+      export default <%= componentName %>Container
+
+
+  - name: 'component'
+    text: |
+      import React from 'react'
+      import styled from 'styled-components'
+
+      const <%= componentName %>Base = styled.div`
+
+      `
+
+      const <%= componentName %> = () => (
+        <<%= componentName %>Base>
+          <%= componentName %>
+        </<%= componentName %>Base>
+      )
+
+      export default <%= componentName %>
