@@ -11,9 +11,11 @@ templates:
       import React from 'react'
       import {storiesOf} from '@storybook/react'
       import {action} from '@storybook/addon-actions'
+      import {withKnobs} from '@storybook/addon-knobs'
       import <%= componentName %> from '../<%= componentName %>'
 
       storiesOf('<%= moduleName %>', module)
+        .addDecorator(withKnobs)
         .add('<%= componentName %>', () => (
           <<%= componentName %> />
         )
@@ -45,16 +47,21 @@ templates:
   - name: 'component'
     text: |
       import React from 'react'
+      import PropTypes from 'prop-types'
       import styled from 'styled-components'
 
       const <%= componentName %>Base = styled.div`
 
       `
 
-      const <%= componentName %> = () => (
+      const <%= componentName %> = ({}) => (
         <<%= componentName %>Base>
           <%= componentName %>
         </<%= componentName %>Base>
       )
+
+      <%= componentName %>.propTypes = {
+
+      }
 
       export default <%= componentName %>
