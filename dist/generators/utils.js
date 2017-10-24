@@ -61,23 +61,21 @@ function getOutputPath(customConfig, type, entityName, moduleName) {
       modulesPath = _getConfig.modulesPath;
 
   var extensionMap = {
-    component: 'js',
-    container: 'js',
-    storybook: 'js'
+    component: '.js',
+    container: 'Container.js',
+    storybook: '.stories.js'
   };
   var extension = extensionMap[type];
-  var outputFileName = void 0;
-  var modulePath = './' + modulesPath + '/' + moduleName;
+  var outputFileName = '' + entityName + extension;
 
+  var modulePath = void 0;
   if (type === 'storybook') {
-    outputFileName = entityName + 'stories.' + extension;
-    return modulePath + '/components/stories/' + outputFileName;
-  } else if (type === 'container') {
-    outputFileName = entityName + 'Container.' + extension;
+    modulePath = './' + modulesPath + '/' + moduleName + '/components/stories';
   } else {
-    outputFileName = entityName + '.' + extension;
+    modulePath = './' + modulesPath + '/' + moduleName + '/' + type + 's';
   }
-  return modulePath + '/' + type + 's/' + outputFileName;
+
+  return modulePath + '/' + outputFileName;
 }
 
 /**

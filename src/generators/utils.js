@@ -20,23 +20,21 @@ import {getConfig} from '../config_utils'
 export function getOutputPath (customConfig, type, entityName, moduleName) {
   const {modulesPath} = getConfig(customConfig)
   const extensionMap = {
-    component: 'js',
-    container: 'js',
-    storybook: 'js'
+    component: '.js',
+    container: 'Container.js',
+    storybook: '.stories.js'
   }
   let extension = extensionMap[type]
-  let outputFileName
-  const modulePath = `./${modulesPath}/${moduleName}`
+  const outputFileName = `${entityName}${extension}`
 
+  let modulePath
   if (type === 'storybook') {
-    outputFileName = `${entityName}.stories.${extension}`
-    return `${modulePath}/components/stories/${outputFileName}`
-  } else if (type === 'container') {
-    outputFileName = `${entityName}Container.${extension}`
+    modulePath = `./${modulesPath}/${moduleName}/components/stories`
   } else {
-    outputFileName = `${entityName}.${extension}`
+    modulePath = `./${modulesPath}/${moduleName}/${type}s`
   }
-  return `${modulePath}/${type}s/${outputFileName}`
+
+  return `${modulePath}/${outputFileName}`
 }
 
 /**
