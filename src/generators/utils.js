@@ -118,7 +118,6 @@ export function getTemplateVariables (
   options = {}
 ) {
   const {snakeCaseFileNames} = customConfig
-  console.log('utils', fileName)
   if (type === 'component') {
     return {
       moduleName: snakeCaseFileNames
