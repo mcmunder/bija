@@ -159,7 +159,6 @@ function getTemplateVariables(customConfig, type, moduleName, fileName) {
   var options = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : {};
   var snakeCaseFileNames = customConfig.snakeCaseFileNames;
 
-  console.log('utils', fileName);
   if (type === 'component') {
     return {
       moduleName: snakeCaseFileNames ? _lodash2.default.snakeCase(moduleName) : _lodash2.default.camelCase(moduleName),
