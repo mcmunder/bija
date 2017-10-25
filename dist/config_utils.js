@@ -17,7 +17,8 @@ var DEFAULT_CONFIG = exports.DEFAULT_CONFIG = {
   storybook: false,
   generateComponentTests: false,
   generateContainerTests: false,
-  modulesPath: 'src/modules'
+  modulesPath: 'src/modules',
+  useIndexFile: false
 
   /**
    * getConfig returns a full config object based on the default config
