@@ -1,5 +1,7 @@
 # bija
 
+[![npm version](https://badge.fury.io/js/bija.svg)](https://badge.fury.io/js/bija)
+
 A command line tool for auto-generation of react components, redux containers and react storybooks. Forked from [mantra-cli](https://github.com/mantrajs/mantra-cli) and adjusted for non-meteor projects.
 
 *"A bija is a one-syllabled mantra"*
@@ -7,7 +9,9 @@ A command line tool for auto-generation of react components, redux containers an
 
 ## Installation
 
-    npm install -g bija
+```bash
+npm install -g bija
+```
 
 
 ## Documentation
@@ -43,15 +47,15 @@ To customise the output adjust the .bija.yaml config file in the root of the pro
 
 - Generate a component called `myComponent` in module `core`:
 
-    bija g component core:myComponent
-
-- Generate a class component called `myComponent` in module `core`:
-
-    bija g component core:myComponent -c
+```bash
+bija g component core:myComponent
+```
 
 - Generates a container called `myComponentContainer` and its corresponding component called `myComponent` in module `core`:
 
-    bija g container core:myComponent
+```bash
+bija g container core:myComponent
+```
 
 ## Copyright and license
 
