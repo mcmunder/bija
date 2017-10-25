@@ -6,11 +6,15 @@
   "bin": {
     "bija": "./bin/bija"
   },
+  "lint-staged": {
+    "src/**/*.js": ["npm run build", "eslint --fix", "git add"]
+  },
   "scripts": {
     "test":
       "npm run build && NODE_ENV=test ./node_modules/.bin/_mocha test/**/**/*_test.js --require babel-register",
     "lint": "./node_modules/.bin/eslint .",
-    "build": "./node_modules/.bin/babel src/ -d dist/"
+    "build": "./node_modules/.bin/babel src/ -d dist/",
+    "precommit": "lint-staged"
   },
   "repository": {
     "type": "git",
@@ -51,6 +55,8 @@
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-react": "^7.4.0",
     "eslint-plugin-standard": "^3.0.1",
+    "husky": "^0.14.3",
+    "lint-staged": "^4.3.0",
     "mocha": "^4.0.1"
   }
 }
