@@ -1,6 +1,6 @@
 {
   "name": "bija",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "description": "A command line tool for auto-generation of react components, redux containers, storybooks and more.",
   "bin": {
     "bija": "./bin/bija"

@@ -29,7 +29,7 @@ Make sure you run `bija` from the root directory of your project.
 |                | container | `<moduleName>:<entityName>` |
 
 
-### Config / customise output
+### Config and output customisation
 
 To customise the output adjust the .bija.yaml config file in the root of the project to your liking. Some examples can be found in the examples dir.
 
@@ -45,7 +45,7 @@ To customise the output adjust the .bija.yaml config file in the root of the pro
 | tabSize                | number          | 2                    |
 | useIndexFile           | boolean         | false                |
 
-## Examples
+### Examples
 
 - Generate a module called `myModule` in `src/modules` (or whatever is set as `modulesPath` in `.bija.yaml`):
 
@@ -63,6 +63,22 @@ bija g component core:myComponent
 
 ```bash
 bija g container core:myComponent
+```
+
+### Storybooks and storyshots
+When using this tool you probably want to make sure you [load all stories dynamically](https://storybook.js.org/basics/writing-stories/#loading-stories-dynamically) in your storybook config file:
+
+```js
+// in .storybook/config.js
+import {configure} from '@storybook/react'
+
+const req = require.context('../src/modules', true, /\.stories\.js$/)
+
+function loadStories() {
+  req.keys().forEach((filename) => req(filename))
+}
+
+configure(loadStories, module)
 ```
 
 ## Copyright and license
