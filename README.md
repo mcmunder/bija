@@ -21,9 +21,11 @@ Make sure you run `bija` from the root directory of your project.
 ### API
 | command, alias | [type]    | [name]                      |
 | :------------- | :-------- | :-------------------------- |
-| generate, g    | component | `<moduleName>:<entityName>` |
+| generate, g    | module    | `<moduleName>`              |
+|                | component | `<moduleName>:<entityName>` |
 |                | container | `<moduleName>:<entityName>` |
-| destroy, d     | component | `<moduleName>:<entityName>` |
+| destroy, d     | module    | `<moduleName>`              |
+|                | component | `<moduleName>:<entityName>` |
 |                | container | `<moduleName>:<entityName>` |
 
 
@@ -44,6 +46,12 @@ To customise the output adjust the .bija.yaml config file in the root of the pro
 | useIndexFile           | boolean         | false                |
 
 ## Examples
+
+- Generate a module called `myModule` in `src/modules` (or whatever is set as `modulesPath` in `.bija.yaml`):
+
+```bash
+bija g module myModule
+```
 
 - Generate a component called `myComponent` in module `core`:
 
