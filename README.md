@@ -1,18 +1,18 @@
 # bija
 
-A command line tool for auto-generation of react components, redux containers, storybooks and more. Forked from [mantra-cli](https://github.com/mantrajs/mantra-cli) and adjusted for non-meteor projects.
+A command line tool for auto-generation of react components, redux containers and react storybooks. Forked from [mantra-cli](https://github.com/mantrajs/mantra-cli) and adjusted for non-meteor projects.
 
 *"A bija is a one-syllabled mantra"*
 
 
 ## Installation
 
-    npm install --save-dev bija
+    npm install -g bija
 
 
 ## Documentation
 
-`bija` expects you to be in the project root directory.
+Make sure you run `bija` from the root directory of your project.
 
 ### API
 | command, alias | [type]    | [name]                      |
@@ -23,11 +23,11 @@ A command line tool for auto-generation of react components, redux containers, s
 |                | container | `<moduleName>:<entityName>` |
 
 
-### Config / customize output
+### Config / customise output
 
 To customise the output adjust the .bija.yaml config file in the root of the project to your liking. Some examples can be found in the examples dir.
 
-#### Customizable fields:
+#### Customisable fields:
 
 | field                  | type            | default              |
 | :--------------------- | :-------------- | :--------------------|
@@ -41,14 +41,21 @@ To customise the output adjust the .bija.yaml config file in the root of the pro
 
 ## Examples
 
-Generate a stateless functional component called `myComponent` in module `core`:
+- Generate a component called `myComponent` in module `core`:
 
     bija g component core:myComponent
 
-Generate a class component called `myComponent` in module `core`:
+- Generate a class component called `myComponent` in module `core`:
 
     bija g component core:myComponent -c
 
-Generates a container called `myComponentContainer` and its corresponding component called `myComponent` in module `core`:
+- Generates a container called `myComponentContainer` and its corresponding component called `myComponent` in module `core`:
 
     bija g container core:myComponent
+
+## Copyright and license
+
+Copyright 2017, mcmunder.  
+Licensed under the [MIT license](./LICENSE).
+
+[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)

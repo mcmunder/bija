@@ -5,7 +5,8 @@ export const DEFAULT_CONFIG = {
   storybook: false,
   generateComponentTests: false,
   generateContainerTests: false,
-  modulesPath: 'src/modules'
+  modulesPath: 'src/modules',
+  useIndexFile: false
 }
 
 /**
